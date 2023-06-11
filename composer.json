@@ -24,6 +24,14 @@
         "johnpbloch/wordpress": "^6.2",
         "vlucas/phpdotenv": "^5"
     },
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        },
+        "files": [
+            "app/helpers.php"
+        ]
+    },
     "extra": {
         "wordpress-install-dir": "wp",
         "installer-paths": {
