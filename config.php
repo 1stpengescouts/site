@@ -1,4 +1,4 @@
-<?php
+<?php /** @noinspection PhpDefineCanBeReplacedWithConstInspection */
 
 require __DIR__ . '/app.php';
 
@@ -6,7 +6,7 @@ require __DIR__ . '/app.php';
  * The base configuration for WordPress
  *
  * The wp-config.php creation script uses this file during the installation.
- * You don't have to use the web site, you can copy this file to "wp-config.php"
+ * You don't have to use the website, you can copy this file to "wp-config.php"
  * and fill in the values.
  *
  * This file contains the following configurations:
@@ -85,6 +85,10 @@ $table_prefix = 'wp_';
 define( 'WP_DEBUG', false );
 
 /* Add any custom values between this line and the "stop editing" line. */
+
+if (defined('WP_CLI') && WP_CLI) {
+    $_SERVER['HTTP_HOST'] = $_SERVER['SERVER_NAME'] = '1stpengescouts.org.uk';
+}
 
 define( 'WP_CONTENT_DIR', __DIR__ . '/content' );
 define( 'WP_CONTENT_URL', 'https://' . $_SERVER['HTTP_HOST'] . '/content' );
