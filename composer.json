@@ -45,7 +45,8 @@
             "sed -i \"s/\\/wp-blog-header/\\/wp\\/wp-blog-header/g\" index.php",
             "mv wp/wp-content ./content",
             "rm wp/readme.html",
-            "source .wp-install; wp core install --url=$SITE_URL --title=$SITE_TITLE --admin_user=$ADMIN_USER --admin_email=$ADMIN_EMAIL"
+            "git restore .",
+            "source .wp-install; wp core install --path=wp --url=$SITE_URL --title=$SITE_TITLE --admin_user=$ADMIN_USER --admin_email=$ADMIN_EMAIL"
         ]
     },
     "config": {
