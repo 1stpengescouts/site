@@ -4,6 +4,8 @@
 .env.production
 /.idea
 /.vscode
+/.well-known
+index.php
 
 # Exclude WordPress core
 /wp/*
