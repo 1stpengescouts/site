@@ -1,0 +1,21 @@
+/vendor
+.env
+.env.backup
+.env.production
+/.idea
+/.vscode
+
+# Exclude WordPress core
+/wp/*
+!/wp/wp-config.php
+
+# Include wp-content, then exclude each of the subdirectories
+/content/*
+
+## Themes: include the directory, exclude all subdirectories except those specified
+!/content/themes/
+/content/themes/*
+
+## Plugins: include the directory, exclude all subdirectories except those specified
+!/content/plugins/
+/content/plugins/*

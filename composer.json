@@ -1,0 +1,56 @@
+{
+    "name": "1stpengescouts/site",
+    "description": "1st Penge and Beckenham North Scout Group website",
+    "type": "package",
+    "license": "GPL",
+    "authors": [
+        {
+            "name": "Frankie Wittevrongel",
+            "email": "frankie@cupoftea.io"
+        }
+    ],
+    "minimum-stability": "stable",
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://wpackagist.org",
+            "only": [
+                "wpackagist-plugin/*",
+                "wpackagist-theme/*"
+            ]
+        }
+    ],
+    "require": {
+        "johnpbloch/wordpress": "^6.2",
+        "vlucas/phpdotenv": "^5"
+    },
+    "extra": {
+        "wordpress-install-dir": "wp",
+        "installer-paths": {
+            "content/mu-plugins/{$name}/": [
+                "type:wordpress-muplugin"
+            ],
+            "content/plugins/{$name}/": [
+                "type:wordpress-plugin"
+            ],
+            "content/themes/{$name}/": [
+                "type:wordpress-theme"
+            ]
+        }
+    },
+    "scripts": {
+        "post-install-cmd": "@wp-install",
+        "wp-install": [
+            "cp wp/index.php ./index.php",
+            "sed -i \"s/\\/wp-blog-header/\\/wp\\/wp-blog-header/g\" index.php",
+            "mv wp/wp-content ./content",
+            "rm wp/readme.html",
+            "source .wp-install; wp core install --url=$SITE_URL --title=$SITE_TITLE --admin_user=$ADMIN_USER --admin_email=$ADMIN_EMAIL"
+        ]
+    },
+    "config": {
+        "allow-plugins": {
+            "johnpbloch/wordpress-core-installer": true
+        }
+    }
+}
