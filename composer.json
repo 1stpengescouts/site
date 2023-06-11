@@ -49,10 +49,10 @@
     "scripts": {
         "post-install-cmd": "@wp-install",
         "wp-install": [
-            "cp wp/index.php ./index.php",
-            "sed -i \"s/\\/wp-blog-header/\\/wp\\/wp-blog-header/g\" index.php",
-            "mv wp/wp-content ./content",
-            "rm wp/readme.html",
+            "[ ! -f index.php ] && cp wp/index.php ./index.php",
+            "sed -i \"s/'\\/wp-blog-header/'\\/wp\\/wp-blog-header/g\" index.php",
+            "[ -d wp/wp-content ] && mv wp/wp-content ./content",
+            "[ -f wp/readme.html ] && rm wp/readme.html",
             "git restore .",
             "source .wp-install; wp core install --path=wp --url=$SITE_URL --title=$SITE_TITLE --admin_user=$ADMIN_USER --admin_email=$ADMIN_EMAIL"
         ]
