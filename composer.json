@@ -64,7 +64,7 @@
         "post-install-cmd": "@wp-install",
         "wp-install": [
             "[ ! -f index.php ] && cp wp/index.php ./index.php || :",
-            "sed -i'' -e \"s/'\\/wp-blog-header/'\\/wp\\/wp-blog-header/g\" index.php",
+            "sed -i \"s/'\\/wp-blog-header/'\\/wp\\/wp-blog-header/g\" index.php",
             "[ -f wp/readme.html ] && rm wp/readme.html || :",
             "[ -d wp/wp-content ] && mv wp/wp-content ./content || :",
             "[ -d content/plugins/akismet ] && rm -rf content/plugins/akismet || :",
