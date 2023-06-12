@@ -2,6 +2,7 @@
 
 namespace App\WP;
 
+use Composer\Script\Event;
 use Composer\Installer\PackageEvent;
 
 class Plugin
