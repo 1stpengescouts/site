@@ -72,7 +72,8 @@
             "for i in content/themes/twenty*; do rm -rf $i; done",
             "git restore .",
             "@wp-db-install",
-            "wp theme activate bootscout"
+            "wp theme activate bootscout",
+            "App\\WP\\Plugin::enableAll"
         ],
         "wp-db-install": [
             "source $PWD/.wp-install; wp core install --path=wp --url=$SITE_URL --title=\"$SITE_TITLE\" --admin_user=$ADMIN_USER --admin_email=$ADMIN_EMAIL; wp option update siteurl $SITE_URL/wp"
