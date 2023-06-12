@@ -18,11 +18,26 @@
                 "wpackagist-plugin/*",
                 "wpackagist-theme/*"
             ]
+        },
+        {
+            "type":"package",
+            "package": {
+                "name": "wpackagist-theme/bootscout",
+                "version":"v2.1.0",
+                "type": "wordpress-theme",
+                "source": {
+                    "url": "https://github.com/JackFurby/Bootscout-theme.git",
+                    "type": "git",
+                    "reference":"2.1"
+                }
+            }
         }
     ],
     "require": {
         "johnpbloch/wordpress": "^6.2",
-        "vlucas/phpdotenv": "^5"
+        "vlucas/phpdotenv": "^5",
+        "wpackagist-plugin/wp-mail-smtp": "^3.8",
+        "wpackagist-theme/bootscout": "^2.1"
     },
     "autoload": {
         "psr-4": {
@@ -49,20 +64,28 @@
     "scripts": {
         "post-install-cmd": "@wp-install",
         "wp-install": [
-            "[ ! -f index.php ] && cp wp/index.php ./index.php",
-            "sed -i \"s/'\\/wp-blog-header/'\\/wp\\/wp-blog-header/g\" index.php",
-            "[ -d wp/wp-content ] && mv wp/wp-content ./content",
-            "[ -f wp/readme.html ] && rm wp/readme.html",
+            "[ ! -f index.php ] && cp wp/index.php ./index.php || :",
+            "sed -i'' -e \"s/'\\/wp-blog-header/'\\/wp\\/wp-blog-header/g\" index.php",
+            "[ -f wp/readme.html ] && rm wp/readme.html || :",
+            "[ -d wp/wp-content ] && mv wp/wp-content ./content || :",
+            "[ -d content/plugins/akismet ] && rm -rf content/plugins/akismet || :",
+            "[ -f content/plugins/hello.php ] && rm content/plugins/hello.php || :",
+            "for i in content/themes/twenty*; do rm -rf $i; done",
             "git restore .",
-            "@wp-db-install"
+            "@wp-db-install",
+            "wp theme activate bootscout"
         ],
         "wp-db-install": [
             "source $PWD/.wp-install; wp core install --path=wp --url=$SITE_URL --title=\"$SITE_TITLE\" --admin_user=$ADMIN_USER --admin_email=$ADMIN_EMAIL; wp option update siteurl $SITE_URL/wp"
-        ]
+        ],
+        "post-package-install": "App\\WP\\Plugin::enable",
+        "post-package-update": "App\\WP\\Plugin::enable",
+        "post-package-uninstall": "App\\WP\\Plugin::disable"
     },
     "config": {
         "allow-plugins": {
-            "johnpbloch/wordpress-core-installer": true
+            "johnpbloch/wordpress-core-installer": true,
+            "composer/installers": true
         }
     }
 }
