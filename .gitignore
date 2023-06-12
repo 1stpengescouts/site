@@ -8,6 +8,7 @@
 /.idea
 /.vscode
 /.well-known
+.htaccess
 index.php
 
 # Exclude WordPress core
