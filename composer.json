@@ -54,7 +54,10 @@
             "[ -d wp/wp-content ] && mv wp/wp-content ./content",
             "[ -f wp/readme.html ] && rm wp/readme.html",
             "git restore .",
-            "source .wp-install; wp core install --path=wp --url=$SITE_URL --title=\"$SITE_TITLE\" --admin_user=$ADMIN_USER --admin_email=$ADMIN_EMAIL"
+            "@wp-db-install"
+        ],
+        "wp-db-install": [
+            "source $PWD/.wp-install; wp core install --path=wp --url=$SITE_URL --title=\"$SITE_TITLE\" --admin_user=$ADMIN_USER --admin_email=$ADMIN_EMAIL; wp option update siteurl $SITE_URL/wp"
         ]
     },
     "config": {
