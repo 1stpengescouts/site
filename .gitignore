@@ -10,7 +10,8 @@
 /.well-known
 
 # Exclude WordPress core
-index.php
+/index.php
+/public/.htaccess
 /public/index.php
 /public/wp/*
 !/public/wp/wp-config.php
