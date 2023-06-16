@@ -2,7 +2,7 @@
 
 function bs_1stpenge_block_assets() {
     wp_enqueue_style('bs-1stpenge-theme',
-        get_template_directory_uri() . '/assets/css/app.css',
+        get_stylesheet_directory_uri() . '/assets/css/app.css',
         ['theme'],
         wp_get_theme()->get('Version')
     );
