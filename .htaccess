@@ -8,7 +8,7 @@ Deny from all
 
 # Use public as web root
 RewriteEngine On
-RewriteCond %{DOCUMENT_ROOT}/public%{REQUEST_URI} !-f
+RewriteCond %{DOCUMENT_ROOT}/public%{REQUEST_URI} -d
 RewriteCond %{REQUEST_URI} !(.*)/$
 RewriteRule ^(.*)$ /$1/ [L,R=301]
 RewriteRule !^public/? /public%{REQUEST_URI} [L,NC]
