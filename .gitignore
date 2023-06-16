@@ -21,6 +21,7 @@ index.php
 ## Themes: include the directory, exclude all subdirectories except those specified
 !/public/content/themes/
 /public/content/themes/*
+!/public/content/themes/1stpenge
 
 ## Plugins: include the directory, exclude all subdirectories except those specified
 !/public/content/plugins/

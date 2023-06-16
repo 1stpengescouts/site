@@ -74,7 +74,7 @@
             "[ -d public/wp/wp-content ] && (cp -r public/wp/wp-content/* ./public/content && rm -rf public/wp/wp-content) || :",
             "git restore .",
             "@wp-db-install",
-            "wp theme activate bootscout",
+            "wp theme activate 1stpenge",
             "App\\WP\\Plugin::enableAll"
         ],
         "wp-db-install": [
