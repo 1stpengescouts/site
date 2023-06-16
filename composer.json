@@ -47,15 +47,15 @@
         ]
     },
     "extra": {
-        "wordpress-install-dir": "wp",
+        "wordpress-install-dir": "public/wp",
         "installer-paths": {
-            "content/mu-plugins/{$name}/": [
+            "public/content/mu-plugins/{$name}/": [
                 "type:wordpress-muplugin"
             ],
-            "content/plugins/{$name}/": [
+            "public/content/plugins/{$name}/": [
                 "type:wordpress-plugin"
             ],
-            "content/themes/{$name}/": [
+            "public/content/themes/{$name}/": [
                 "type:wordpress-theme"
             ]
         }
@@ -63,20 +63,22 @@
     "scripts": {
         "post-install-cmd": "@wp-install",
         "wp-install": [
-            "[ ! -f index.php ] && cp wp/index.php ./index.php || :",
-            "sed -i \"s/'\\/wp-blog-header/'\\/wp\\/wp-blog-header/g\" index.php",
-            "[ -f wp/readme.html ] && rm wp/readme.html || :",
-            "[ -d wp/wp-content ] && mv wp/wp-content ./content || :",
-            "[ -d content/plugins/akismet ] && rm -rf content/plugins/akismet || :",
-            "[ -f content/plugins/hello.php ] && rm content/plugins/hello.php || :",
-            "for i in content/themes/twenty*; do rm -rf $i; done",
+            "[ ! -f index.php ] && cp public/wp/index.php ./index.php || :",
+            "sed -i \"s/'\\/wp-blog-header/'\\/content/wp\\/wp-blog-header/g\" index.php",
+            "[ ! -f public/index.php ] && cp public/wp/index.php ./public/index.php || :",
+            "sed -i \"s/'\\/wp-blog-header/'\\/wp\\/wp-blog-header/g\" public/index.php",
+            "[ -f public/wp/readme.html ] && rm public/wp/readme.html || :",
+            "[ -d public/wp/wp-content/plugins/akismet ] && rm -rf public/wp/wp-content/plugins/akismet || :",
+            "[ -f public/wp/wp-content/plugins/hello.php ] && rm public/wp/wp-content/plugins/hello.php || :",
+            "for i in public/wp/wp-content/themes/twenty*; do rm -rf $i; done",
+            "[ -d public/wp/wp-content ] && (cp -r public/wp/wp-content/* ./public/content && rm -rf public/wp/wp-content) || :",
             "git restore .",
             "@wp-db-install",
             "wp theme activate bootscout",
             "App\\WP\\Plugin::enableAll"
         ],
         "wp-db-install": [
-            "source $PWD/.wp-install; wp core install --path=wp --url=$SITE_URL --title=\"$SITE_TITLE\" --admin_user=$ADMIN_USER --admin_email=$ADMIN_EMAIL; wp option update siteurl $SITE_URL/wp"
+            "source $PWD/.wp-install; wp core install --url=$SITE_URL --title=\"$SITE_TITLE\" --admin_user=$ADMIN_USER --admin_email=$ADMIN_EMAIL; wp option update siteurl $SITE_URL/wp"
         ],
         "post-package-install": "App\\WP\\Plugin::enable",
         "post-package-update": "App\\WP\\Plugin::enable",

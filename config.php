@@ -90,5 +90,5 @@ if (defined('WP_CLI') && WP_CLI) {
     $_SERVER['HTTP_HOST'] = $_SERVER['SERVER_NAME'] = '1stpengescouts.org.uk';
 }
 
-define( 'WP_CONTENT_DIR', __DIR__ . '/content' );
+define( 'WP_CONTENT_DIR', __DIR__ . '/public/content' );
 define( 'WP_CONTENT_URL', 'https://' . $_SERVER['HTTP_HOST'] . '/content' );

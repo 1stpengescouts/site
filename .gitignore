@@ -8,20 +8,20 @@
 /.idea
 /.vscode
 /.well-known
-.htaccess
-index.php
 
 # Exclude WordPress core
-/wp/*
-!/wp/wp-config.php
+index.php
+/public/index.php
+/public/wp/*
+!/public/wp/wp-config.php
 
 # Include wp-content, then exclude each of the subdirectories
-/content/*
+/public/content/*
 
 ## Themes: include the directory, exclude all subdirectories except those specified
-!/content/themes/
-/content/themes/*
+!/public/content/themes/
+/public/content/themes/*
 
 ## Plugins: include the directory, exclude all subdirectories except those specified
-!/content/plugins/
-/content/plugins/*
+!/public/content/plugins/
+/public/content/plugins/*

@@ -1,0 +1,14 @@
+Options -Indexes
+
+# Deny access to hidden files - files that start with a dot (.)
+<FilesMatch "^\.">
+Order allow,deny
+Deny from all
+</FilesMatch>
+
+# Use public as web root
+RewriteEngine On
+RewriteCond %{DOCUMENT_ROOT}/public%{REQUEST_URI} !-f
+RewriteCond %{REQUEST_URI} !(.*)/$
+RewriteRule ^(.*)$ /$1/ [L,R=301]
+RewriteRule !^public/? /public%{REQUEST_URI} [L,NC]
