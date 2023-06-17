@@ -1,0 +1,34 @@
+# This file is managed by puppets ssh_gateway module.
+
+# Force the --defaults flag for any 'wp db' command that requires it.
+# We do this so to ensure that the TCP protocol set within my.cnf is honoured.
+
+# [--defaults]
+# Loads the environment’s MySQL option files. Default behavior is to skip
+# loading them to avoid failures due to misconfiguration.
+
+db check:
+  defaults: True
+db clean:
+  defaults: True
+db cli:
+  defaults: True
+db create:
+  defaults: True
+db drop:
+  defaults: True
+db export:
+  defaults: True
+db import:
+  defaults: True
+db optimize:
+  defaults: True
+db query:
+  defaults: True
+db repair:
+  defaults: True
+db reset:
+  defaults: True
+
+apache_modules:
+  - mod_rewrite
