@@ -1,3 +1,6 @@
+/**
+ * Overflow bg
+ */
 body {
     background-color: #222 !important;
 }
@@ -6,6 +9,25 @@ body {
     background-color: var(--wp--preset--color--white);
 }
 
+/**
+ * Typography
+ */
+h1, .h1, .has-xx-large-font-size,
+h2, .h2, .has-x-large-font-size,
+h3, .h3, .has-large-font-size,
+h4, .h4, .has-medium-font-size,
+h5, .h5, .has-small-font-size,
+h6, .h6 {
+    font-weight: 500;
+}
+
+strong, .strong {
+    font-weight: bolder;
+}
+
+/**
+ * Logo
+ */
 .wp-block-site-logo.is-default-size img {
     width: auto;
     height: 6rem;
