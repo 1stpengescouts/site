@@ -10,7 +10,7 @@ add_action('wp_head', 'bs_1stpenge_preconnect', 2);
 function bs_1stpenge_block_assets() {
     wp_enqueue_style(
         'Nunito+Sans',
-        'https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap'
+        'https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&display=swap'
     );
     wp_enqueue_style(
         'bs-1stpenge-theme',
