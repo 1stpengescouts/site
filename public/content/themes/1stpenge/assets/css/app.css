@@ -34,6 +34,16 @@ strong, .strong {
 }
 
 /**
+ * Footer
+ */
+footer a:not(.wp-block-social-link-anchor) {
+    transition: filter .15s ease-in-out;
+}
+footer a:not(.wp-block-social-link-anchor):hover {
+    filter: brightness(85%);
+}
+
+/**
  * Buttons
  */
 .wp-block-button.is-style-outline > .wp-block-button__link,
