@@ -47,6 +47,29 @@ header .wp-block-navigation__submenu-container{
     font-size: var(--wp--preset--font-size--small);
 }
 
+.wp-block-navigation .has-child .wp-block-navigation__submenu-container {
+    transition: opacity .15s ease-in-out;
+}
+
+.wp-block-navigation:not(.has-background) .wp-block-navigation__submenu-container {
+    background: none;
+}
+
+.wp-block-navigation__submenu-container .wp-block-navigation-item {
+    background-color: #fff;
+    transition: background-color .15s ease-in-out;
+}
+
+.wp-block-navigation__submenu-container .wp-block-navigation-item:first-child {
+    border-top-left-radius: var(--bs-border-radius);
+    border-top-right-radius: var(--bs-border-radius);
+}
+
+.wp-block-navigation__submenu-container .wp-block-navigation-item:last-child {
+    border-bottom-right-radius: var(--bs-border-radius);
+    border-bottom-left-radius: var(--bs-border-radius);
+}
+
 /**
  * Footer
  */
