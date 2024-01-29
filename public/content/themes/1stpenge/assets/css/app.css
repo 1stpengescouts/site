@@ -37,6 +37,17 @@ strong, .strong {
 }
 
 /**
+ * Menu
+ */
+header .wp-block-navigation__container {
+    font-size: var(--wp--preset--font-size--medium);
+}
+
+header .wp-block-navigation__submenu-container{
+    font-size: var(--wp--preset--font-size--small);
+}
+
+/**
  * Footer
  */
 footer a:not(.wp-block-social-link-anchor) {
