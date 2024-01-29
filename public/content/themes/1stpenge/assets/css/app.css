@@ -29,8 +29,11 @@ strong, .strong {
  * Logo
  */
 .wp-block-site-logo.is-default-size img {
+    --padding-bottom: 1rem;
+
     width: auto;
-    height: 6rem;
+    height: calc(6rem + var(--padding-bottom));
+    padding-bottom: var(--padding-bottom);
 }
 
 /**
