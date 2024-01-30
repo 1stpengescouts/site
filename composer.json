@@ -83,7 +83,7 @@
         ],
         "post-package-install": "App\\WP\\Plugin::enable",
         "post-package-update": "App\\WP\\Plugin::enable",
-        "post-package-uninstall": "App\\WP\\Plugin::disable"
+        "pre-package-uninstall": "App\\WP\\Plugin::disable"
     },
     "config": {
         "sort-packages": true,
