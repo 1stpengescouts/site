@@ -72,7 +72,6 @@
             "[ -f public/wp/wp-content/plugins/hello.php ] && rm public/wp/wp-content/plugins/hello.php || :",
             "for i in public/wp/wp-content/themes/twenty*; do rm -rf $i; done",
             "[ -d public/wp/wp-content ] && (cp -r public/wp/wp-content/* ./public/content && rm -rf public/wp/wp-content) || :",
-            "git restore .",
             "wp rewrite flush --hard",
             "@wp-db-install",
             "wp theme activate 1stpenge",
