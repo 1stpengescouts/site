@@ -13,7 +13,7 @@
 /index.php
 /public/.htaccess
 /public/index.php
-/public/wp/*
+/public/wp
 
 # Include wp-content, then exclude each of the subdirectories
 /public/content/*
