@@ -69,11 +69,14 @@ header .wp-block-navigation__submenu-container{
 }
 
 /**
- * Page title
+ * Page
  */
 .wp-block-group-is-layout-constrained > :first-child.wp-block-post-title:first-child {
     margin-block-start: 0.5em;
-    margin-block-end: 0.5em;
+}
+
+.wp-block-group-is-layout-constrained > .entry-content {
+    margin-block-start: 24px;
 }
 
 /**
