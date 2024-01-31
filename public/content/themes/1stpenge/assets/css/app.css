@@ -323,13 +323,6 @@ footer a:not(.wp-block-social-link-anchor):hover {
     transition: filter .15s ease-in-out;
 }
 
-/* make this a PR to theme/scss/site/search.scss#L5 */
-.wp-block-search__button-inside .wp-block-search__inside-wrapper .wp-block-search__button {
-    position: relative;
-    z-index: 2;
-    margin-left: -1px;
-}
-
 /**
  * Social Links
  */
