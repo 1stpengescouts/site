@@ -61,7 +61,8 @@
         }
     },
     "scripts": {
-        "post-install-cmd": "@wp-install",
+        "pre-install-cmd": "[ ! -d public/wp ] && touch .do-wp-install || :",
+        "post-install-cmd": "[ -f .do-wp-install ] && rm .do-wp-install && composer wp-install || :",
         "wp-install": [
             "[ ! -f index.php ] && cp public/wp/index.php ./index.php || :",
             "sed -i \"s/'\\/wp-blog-header/'\\/content/wp\\/wp-blog-header/g\" index.php",
