@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "86bcf899fdaba72157bac14bd6eae6e5",
+    "content-hash": "7c46e909b8ffc4c93e14366cebe3ddb5",
     "packages": [
         {
             "name": "composer/installers",
@@ -806,10 +806,10 @@
         },
         {
             "name": "wpackagist-theme/bootscout",
-            "version": "v2.1.0",
+            "version": "v2.3.2",
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/JackFurby/Bootscout-theme/releases/download/2.1/bootscout.zip"
+                "url": "https://github.com/JackFurby/Bootscout-theme/releases/download/2.3.2/bootscout.zip"
             },
             "type": "wordpress-theme"
         }
