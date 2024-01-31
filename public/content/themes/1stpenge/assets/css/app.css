@@ -1,7 +1,7 @@
 /**
  * Overflow bg
  */
-body {
+body:not(.block-editor-iframe__body) {
     background-color: #222 !important;
 }
 
