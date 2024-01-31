@@ -36,6 +36,7 @@
         "johnpbloch/wordpress": "^6.2",
         "vlucas/phpdotenv": "^5",
         "wpackagist-plugin/wp-mail-smtp": "^3.8",
+        "wpackagist-plugin/wp-map-block": "^1.4",
         "wpackagist-theme/bootscout": "^2.1"
     },
     "autoload": {
