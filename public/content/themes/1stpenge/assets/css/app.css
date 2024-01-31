@@ -69,6 +69,13 @@ header .wp-block-navigation__submenu-container{
 }
 
 /**
+ * Page title
+ */
+.wp-block-group-is-layout-constrained > :first-child.wp-block-post-title:first-child {
+    margin-block-start: 0.5em;
+}
+
+/**
  * Footer
  */
 footer a:not(.wp-block-social-link-anchor) {
