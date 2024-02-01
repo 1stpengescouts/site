@@ -35,6 +35,7 @@
     "require": {
         "johnpbloch/wordpress": "^6.4",
         "vlucas/phpdotenv": "^5",
+        "wpackagist-plugin/autodescription": "^5.0",
         "wpackagist-plugin/wp-mail-smtp": "^3.8",
         "wpackagist-theme/bootscout": "^2.3"
     },
