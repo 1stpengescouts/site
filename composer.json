@@ -23,10 +23,10 @@
             "type":"package",
             "package": {
                 "name": "wpackagist-theme/bootscout",
-                "version":"v2.3.2",
+                "version":"v2.4.0",
                 "type": "wordpress-theme",
                 "dist": {
-                    "url": "https://github.com/JackFurby/Bootscout-theme/releases/download/2.3.2/bootscout.zip",
+                    "url": "https://github.com/JackFurby/Bootscout-theme/releases/download/2.4/Bootscout-theme.zip",
                     "type": "zip"
                 }
             }
@@ -37,7 +37,7 @@
         "vlucas/phpdotenv": "^5",
         "wpackagist-plugin/autodescription": "^5.0",
         "wpackagist-plugin/wp-mail-smtp": "^3.8",
-        "wpackagist-theme/bootscout": "^2.3"
+        "wpackagist-theme/bootscout": "^2.4"
     },
     "autoload": {
         "psr-4": {
